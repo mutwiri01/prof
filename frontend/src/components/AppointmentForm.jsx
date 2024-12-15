@@ -35,7 +35,7 @@ const AppointmentForm = () => {
     const fetchDoctors = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/user/doctors"
+          "https://hospitalcloud.vercel.app/api/user/doctors"
         );
         setDoctors(data.doctors);
       } catch (error) {
@@ -51,7 +51,7 @@ const AppointmentForm = () => {
     try {
       const hasVisitedBool = Boolean(hasVisited);
       const { data } = await axios.post(
-        "http://localhost:4000/api/appointment/post",
+        "https://hospitalcloud.vercel.app/api/appointment/post",
         {
           firstName,
           lastName,

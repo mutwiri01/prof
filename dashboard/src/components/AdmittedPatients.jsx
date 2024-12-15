@@ -13,7 +13,7 @@ const AdmittedPatients = () => {
   useEffect(() => {
     const fetchPatients = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:4000/api/user/patients/admitted`);
+        const { data } = await axios.get(`https://hospitalcloud.vercel.app/api/user/patients/admitted`);
         setPatients(data.patients);
       } catch (err) {
         setError(err.response?.data?.message || "An error occurred");
