@@ -1,8 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+
+    // Check the screen size on initial load
+    handleResize();
+
+    // Add resize event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -23,6 +43,7 @@ const Navbar = () => {
         style={{
           ...styles.navLinks,
           ...(isOpen ? styles.navLinksOpen : {}),
+          display: isMobile ? (isOpen ? 'flex' : 'none') : 'flex', // Show links only on mobile if open, else hide
         }}
       >
         <Link to="/" style={styles.link} onClick={() => setIsOpen(false)}>Home</Link>
@@ -65,7 +86,6 @@ const styles = {
     transition: 'transform 0.3s ease-in-out',
   },
   navLinksOpen: {
-    display: 'flex',
     flexDirection: 'column',
     position: 'absolute',
     top: '60px',
@@ -96,25 +116,8 @@ const styles = {
     transition: 'background-color 0.3s',
   },
   hamburger: {
-    display: 'none',
     fontSize: '24px',
     cursor: 'pointer',
-  },
-  '@media (max-width: 768px)': {
-    navLinks: {
-      display: 'none',
-      flexDirection: 'column',
-      width: '100%',
-      gap: '10px',
-      padding: '10px',
-      backgroundColor: '#f0f0f0',
-    },
-    navLinksOpen: {
-      display: 'flex',
-    },
-    hamburger: {
-      display: 'block',
-    },
   },
 };
 
