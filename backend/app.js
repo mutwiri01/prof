@@ -14,18 +14,13 @@ config({ path: "./config/config.env" });
 
 app.use(
   cors({
-    origin: [
-      process.env.FRONTEND_URL,
-      process.env.DASHBOARD_URL,
-      "https://hmsfront.vercel.app",
-      "https://hmsdash.vercel.app",
-      "http://localhost:5173",
-      "http://localhost:5174",
-    ],
+    origin: "*", // Allow all origins
     methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: false, // Set to false if credentials are not needed
   })
 );
+
 
 app.use(cookieParser());
 app.use(express.json());
