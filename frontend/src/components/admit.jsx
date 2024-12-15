@@ -166,7 +166,7 @@ const Admit = () => {
               id="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="Phone Number"
+              placeholder="Phone Number 10 digits"
             />
           </div>
 
@@ -178,7 +178,7 @@ const Admit = () => {
               id="nic"
               value={formData.nic}
               onChange={handleChange}
-              placeholder="ID Number"
+              placeholder="ID Number 8 digits"
             />
           </div>
 
