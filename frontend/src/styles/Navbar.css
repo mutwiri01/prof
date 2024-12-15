@@ -1,124 +1,146 @@
-nav {
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  background-color: #f4f7fa;
+  padding-top: 100px; /* Space for the fixed navbar */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #009688;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #212121; /* Adjust color as needed */
-  max-width: 1200px; /* Set maximum width */
-  margin: 0 auto; /* Center the navbar */
+  z-index: 10;
+  transition: transform 0.3s ease-in-out;
 }
 
-.logo-img {
-  width: 120px; /* Adjust size as needed */
-}
-
-.navLinks {
+.logo-container {
   display: flex;
   align-items: center;
-}
-
-.links {
-  display: flex;
-  gap: 15px;
-}
-
-.links a {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 1px;
-}
-
-.links a:hover {
-  color: #cccccc;
-}
-
-.buttons {
-  display: flex;
-  gap: 15px;
-}
-
-.btn {
-  padding: 8px 20px;
-  color: #ffffff;
-  background-color: #646cff; /* Adjust color as needed */
-  border-radius: 20px;
-  font-size: 14px; /* Adjust font size */
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.btn:hover {
-  background-color: #535bf2; /* Adjust hover color as needed */
-}
-
-
-
-
-
-
-
-
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #111; /* Change the background color as needed */
-  padding: 20px;
 }
 
 .logo {
-  flex: 1;
+  width: 120px;
+  height: auto;
 }
 
-.logo-img {
-  width: 150px;
-}
-
-.navLinks {
-  flex: 2;
-}
-
+/* Links Section */
 .links {
   display: flex;
+  gap: 20px;
+  transition: all 0.3s ease;
 }
 
-.link {
-  color: #fff; /* Set the color of navigation links to white */
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 500;
-  margin-right: 20px;
-}
-
-.buttons {
+.links div {
   display: flex;
-}
-
-.btn {
-  border-radius: 8px;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: 600;
-  margin-right: 10px;
+  align-items: center;
+  color: #fff;
+  padding: 12px 20px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.loginBtn {
-  background-color: #646cff; /* Change the login button color as needed */
-  color: #fff; /* Set the text color to white */
+.links div:hover {
+  background-color: #00796b;
 }
 
-.registerBtn {
-  background-color: #9083d5; /* Change the register button color as needed */
-  color: #fff; /* Set the text color to white */
+.links div span {
+  margin-left: 10px;
+  font-size: 16px;
 }
 
-.logoutBtn {
-  background-color: #ff3d3d; /* Change the logout button color as needed */
-  color: #fff; /* Set the text color to white */
+.admin-panel-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.admin-panel-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Hamburger Menu */
+.hamburger-wrapper {
+  display: none;
+}
+
+.hamburger {
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 11;
+}
+
+/* Overlay for mobile menu */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+
+  .navbar.show .links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #009688;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+
+  .hamburger-wrapper {
+    display: block;
+  }
+
+  .links div {
+    width: 100%;
+    text-align: left;
+    padding: 15px 20px;
+  }
+
+  .links div span {
+    font-size: 14px;
+  }
+
+  .overlay {
+    display: block;
+  }
+
+  body {
+    padding-top: 80px; /* Adjust padding for mobile navbar */
+  }
 }

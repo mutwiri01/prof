@@ -10,15 +10,6 @@ const Navbar = () => {
 
   return (
     <nav style={styles.nav}>
-      <div style={styles.logo}>
-        <Link to="/">
-          <img
-            src="/h1.png"
-            alt="Logo"
-            style={styles.logoImg}
-          />
-        </Link>
-      </div>
       <div
         style={{
           ...styles.navLinks,
