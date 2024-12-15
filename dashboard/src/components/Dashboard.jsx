@@ -12,7 +12,7 @@ const Dashboard = () => {
     const fetchAppointments = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/appointment/getall"
+          "https://hospitalcloud.vercel.app/api/appointment/getall"
         );
         setAppointments(data.appointments);
         setTotalAppointments(data.appointments.length);
@@ -25,7 +25,7 @@ const Dashboard = () => {
     const fetchDoctors = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/user/doctors"
+          "https://hospitalcloud.vercel.app/api/user/doctors"
         );
         setRegisteredDoctors(data.doctors.length);
       } catch (error) {
@@ -40,7 +40,7 @@ const Dashboard = () => {
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
       const response = await axios.put(
-        `http://localhost:4000/api/appointment/update/${appointmentId}`,
+        `https://hospitalcloud.vercel.app/api/appointment/update/${appointmentId}`,
         { status }
       );
       if (response.data.success) {

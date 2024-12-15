@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema({
     minLength: [8, "ID Number Must Contain Only 8 Digits!"],
     maxLength: [8, "ID Number Must Contain Only 8 Digits!"],
   },
-  sickness: { type: String, required: true },
+  sickness: { type: String, required: false },
   symptoms: { type: String },
   aiDiagnosis: { type: String },
   dob: {
