@@ -1,46 +1,47 @@
-
 import { Link } from "react-router-dom";
 import { FaLocationArrow, FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import "../styles/Footer.css";
 
 const Footer = () => {
-  
-
   return (
-    <>
-      <footer className={"container"}>
-        <hr />
-        <div className="content">
-          <div>
-            <img src="/lg1.png" alt="logo" className="logo-img"/>
-          </div>
-          <div>
-            <h4>Quick Links</h4>
-            <ul>
-              <Link to={"/"}>Home</Link>
-              <Link to={"/appointment"}>Appointment</Link>
-              <Link to={"/about"}>About</Link>
-            </ul>
-          </div>
-          <div>
-            <h4>Contact</h4>
-            <div>
-              <FaPhone />
-              <span>+254 752958033</span>
-            </div>
-            <div>
-              <MdEmail />
-              <span>kithinjimutwir1@gmail.com</span>
-            </div>
-            <div>
-              <FaLocationArrow />
-              <span>Nairobi, Kenya</span>
-            </div>
-          </div>
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-logo">
+          <img src="/lg1.png" alt="logo" className="logo-img" />
         </div>
-      </footer>
-    </>
+
+        <div className="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li>
+              <Link to={"/"}>Home</Link>
+            </li>
+            <li>
+              <Link to={"/appointment"}>Appointment</Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="footer-contact">
+          <h4>Contact</h4>
+          <ul>
+            <li>
+              <FaPhone /> <span>+254 752958033</span>
+            </li>
+            <li>
+              <MdEmail /> <span>kithinjimutwir1@gmail.com</span>
+            </li>
+            <li>
+              <FaLocationArrow /> <span>Nairobi, Kenya</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Hospital Management System. All rights reserved.</p>
+      </div>
+    </footer>
   );
 };
 

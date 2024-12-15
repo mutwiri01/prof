@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -27,7 +27,7 @@ const Navbar = () => {
       >
         <Link to="/" style={styles.link} onClick={() => setIsOpen(false)}>Home</Link>
         <Link to="/appointment" style={styles.link} onClick={() => setIsOpen(false)}>Appointment</Link>
-        <a href="https://hmsdash.vercel.app/" style={styles.adminPanelBtn} onClick={() => setIsOpen(false)}>management</a>
+        <a href="https://hmsdash.vercel.app/" style={styles.adminPanelBtn} onClick={() => setIsOpen(false)}>Management</a>
       </div>
       <div onClick={handleToggle} style={styles.hamburger}>
         &#9776;
@@ -103,6 +103,11 @@ const styles = {
   '@media (max-width: 768px)': {
     navLinks: {
       display: 'none',
+      flexDirection: 'column',
+      width: '100%',
+      gap: '10px',
+      padding: '10px',
+      backgroundColor: '#f0f0f0',
     },
     navLinksOpen: {
       display: 'flex',

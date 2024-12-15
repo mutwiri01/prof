@@ -82,7 +82,7 @@ const Admit = () => {
       console.log("Submitting form data:", formData);
   
       const response = await axios.post(
-        "http://localhost:4000/api/user/patient/admit",
+        "https://hospitalcloud.vercel.app/api/user/patient/admit",
         formData,
         {
           headers: {
