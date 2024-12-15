@@ -1,0 +1,310 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Dashboard Layout */
+.dashboard {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.firstBox,
+.secondBox,
+.thirdBox {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  text-align: center;
+}
+
+.firstBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.firstBox img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+.firstBox .content {
+  margin-top: 10px;
+}
+
+.firstBox .content p {
+  font-size: 16px;
+  color: #777;
+}
+
+.firstBox .content h5 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.secondBox,
+.thirdBox {
+  font-size: 16px;
+  color: #777;
+}
+
+.secondBox h3,
+.thirdBox h3 {
+  font-size: 28px;
+  color: #4caf50;
+  margin-top: 10px;
+}
+
+/* Appointments Section */
+.appointmentsSection {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.appointmentsSection h5 {
+  font-size: 20px;
+  color: #4caf50;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow-x: auto;  /* Enable horizontal scrolling */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+th {
+  background-color: #009688;
+  color: #fff;
+  font-size: 16px;
+}
+
+td {
+  font-size: 14px;
+}
+
+select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+select:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+td[colspan="6"] {
+  text-align: center;
+  color: #777;
+  font-size: 18px;
+  padding: 20px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .firstBox,
+  .secondBox,
+  .thirdBox {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .firstBox img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .firstBox .content {
+    text-align: center;
+  }
+
+  .firstBox .content p {
+    font-size: 14px;
+  }
+
+  .secondBox h3,
+  .thirdBox h3 {
+    font-size: 24px;
+  }
+
+  table {
+    font-size: 12px;
+    width: 100%;
+    margin-top: 20px;
+    overflow-x: auto;  /* Ensure horizontal scrolling on small screens */
+  }
+
+  th,
+  td {
+    padding: 8px 10px;  /* Reduced padding for smaller screens */
+  }
+
+  .appointmentsSection h5 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .firstBox {
+    padding: 15px;
+  }
+
+  .secondBox,
+  .thirdBox {
+    padding: 15px;
+  }
+
+  .firstBox .content h5 {
+    font-size: 20px;
+  }
+
+  table {
+    font-size: 10px;  /* Smaller font size for better readability */
+    overflow-x: auto; /* Ensure table can be scrolled horizontally */
+  }
+
+  th,
+  td {
+    padding: 8px 10px;  /* Reduced padding for very small screens */
+  }
+
+  .secondBox h3,
+  .thirdBox h3 {
+    font-size: 20px;
+  }
+
+  .appointmentsSection h5 {
+    font-size: 16px;
+  }
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .firstBox,
+  .secondBox,
+  .thirdBox {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .firstBox img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .firstBox .content {
+    text-align: center;
+  }
+
+  .firstBox .content p {
+    font-size: 14px;
+  }
+
+  .secondBox h3,
+  .thirdBox h3 {
+    font-size: 24px;
+  }
+
+  table {
+    font-size: 12px;
+    width: 100%;
+    margin-top: 20px;
+    overflow-x: auto;
+  }
+
+  th,
+  td {
+    padding: 12px;
+  }
+
+  .appointmentsSection h5 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .firstBox {
+    padding: 15px;
+  }
+
+  .secondBox,
+  .thirdBox {
+    padding: 15px;
+  }
+
+  .firstBox .content h5 {
+    font-size: 20px;
+  }
+
+  table {
+    font-size: 10px;
+    overflow-x: auto;
+  }
+
+  th,
+  td {
+    padding: 8px;
+  }
+
+  .secondBox h3,
+  .thirdBox h3 {
+    font-size: 20px;
+  }
+
+  .appointmentsSection h5 {
+    font-size: 16px;
+  }
+}

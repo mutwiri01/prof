@@ -1,0 +1,195 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fafa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Admitted Patients Section */
+.admitted-patients {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.admitted-patients h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #009688;
+  font-weight: 700;
+}
+
+/* Card Container */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Patient Card */
+.patient-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.patient-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.patient-card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+.card-icon {
+  font-size: 2rem;
+  color: #009688;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+.patient-card:hover .card-icon {
+  color: #00796b;
+}
+
+/* Loading and Error States */
+.loading, .error {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #666;
+  margin-top: 50px;
+}
+
+/* Modal Styles */
+.Modal__Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  text-align: left;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow-y: auto; /* Ensures content doesn't overflow */
+  max-height: 90vh; /* Prevent modal from getting too tall */
+}
+
+.modal h2 {
+  font-size: 2rem;
+  color: #009688;
+  margin-bottom: 20px;
+}
+
+.modal p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.modal button {
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.modal button:hover {
+  background-color: #00796b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admitted-patients h1 {
+    font-size: 2rem;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .patient-card {
+    padding: 15px;
+  }
+
+  .patient-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .card-icon {
+    font-size: 1.5rem;
+  }
+
+  .modal {
+    max-width: 100%;
+    padding: 15px;
+    max-height: 90vh;
+  }
+
+  .modal h2 {
+    font-size: 1.5rem;
+  }
+
+  .modal p {
+    font-size: 0.9rem;
+  }
+
+  .modal button {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    max-width: 100%;
+    padding: 10px;
+    max-height: 90vh;
+  }
+
+  .modal h2 {
+    font-size: 1.25rem;
+  }
+
+  .modal p {
+    font-size: 0.85rem;
+  }
+
+  .modal button {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+}
