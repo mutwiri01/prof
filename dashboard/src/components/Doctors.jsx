@@ -11,7 +11,7 @@ const Doctors = () => {
       try {
         const { data } = await axios.get(
           "https://hospitalcloud.vercel.app/api/user/doctors",
-          { withCredentials: true }
+          { withCredentials: false }
         );
         setDoctors(data.doctors);
       } catch (error) {
