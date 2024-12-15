@@ -18,7 +18,7 @@ const Navbar = () => {
       >
         <Link to="/" style={styles.link} onClick={() => setIsOpen(false)}>Home</Link>
         <Link to="/appointment" style={styles.link} onClick={() => setIsOpen(false)}>Appointment</Link>
-        <a href="https://hmsdash.vercel.app/" style={styles.adminPanelBtn} onClick={() => setIsOpen(false)}>manage</a>
+        <a href="https://managementconsole.vercel.app/" style={styles.adminPanelBtn} onClick={() => setIsOpen(false)}>manage</a>
       </div>
       <div onClick={handleToggle} style={styles.hamburger}>
         &#9776;

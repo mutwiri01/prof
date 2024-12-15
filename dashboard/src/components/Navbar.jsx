@@ -53,7 +53,7 @@ const Navbar = () => {
             <IoPersonAddSharp />
             <span>Add New Doctor</span>
           </div>
-          <div onClick={() => (window.location.href = "http://localhost:5173/")}>
+          <div onClick={() => (window.location.href = "https://hospitalmanagementsystem-ten.vercel.app/")}>
             <TiHome />
             <span>Go to Frontend</span>
           </div>

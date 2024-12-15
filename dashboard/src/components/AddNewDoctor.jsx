@@ -58,7 +58,7 @@ const AddNewDoctor = () => {
       formData.append("docAvatar", docAvatar);
       await axios
         .post("https://hospitalcloud.vercel.app/api/user/doctor/addnew", formData, {
-          withCredentials: true,
+          withCredentials: false,
           headers: { "Content-Type": "multipart/form-data" },
         })
         .then((res) => {
